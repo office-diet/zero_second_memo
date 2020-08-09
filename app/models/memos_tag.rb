@@ -1,0 +1,2 @@
+class MemosTag < ApplicationRecord
+end
