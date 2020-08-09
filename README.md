@@ -49,7 +49,7 @@ Things you may want to cover:
 
 ### Association
 - belongs_to :user
-- has_many :tags_memos
+- has_many :memos_tags
 - has_many :tags, through :tags_memos
 
 
