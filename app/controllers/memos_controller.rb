@@ -1,5 +1,7 @@
 class MemosController < ApplicationController
+  before_action :set_memos, only: :index
   def index
+    # binding.pry
   end
   def new
     @memo = Memo.new
@@ -19,7 +21,9 @@ class MemosController < ApplicationController
 
 
   private
-
+  def set_memos
+    @memos = Memo.where(user_id: current_user.id)
+  end
   def memo_params
     params.require("memo").permit(:theme, :text).merge(user_id: current_user.id)
   end 
