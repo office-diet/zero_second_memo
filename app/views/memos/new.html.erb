@@ -1,9 +1,28 @@
-<%= form_with model: @memo, url: memos_path, local: true do |f| %>
-  <%= f.text_field :theme, placeholder:"テーマを入力", value: @memo.theme %>
-  <%= f.text_area :text, placeholder:"思いつくままに入力", value: @memo.text%>
-  Tag1 : <%= text_field_tag 'post[tags][]' %><br />
-  Tag2 : <%= text_field_tag 'post[tags][]' %><br />
-  Tag3 : <%= text_field_tag 'post[tags][]' %><br />
-  Tag4 : <%= text_field_tag 'post[tags][]' %><br />
-  <%= f.submit "保存" %>
-<% end %>
+<div class="form">
+  <%= form_with model: @memo_tag, url: memos_path, local: true do |f| %>
+    <div>
+      <%= f.label :theme, "メモのテーマ（２０文字以内）", class: "theme" %>
+    </div>
+    <div>
+      <%= f.text_field :theme, placeholder:"テーマを入力", value: @memo_tag.theme, class: "memo-theme", id: "memo-theme" %>
+    </div>
+    <div>
+    <div id="timer">
+      <div id="meter"></div>
+      <div id="time">1分メモスタート</div>
+    </div>
+      <%= f.label :theme, "メモ"%>
+    </div>
+    <div>
+      <%= f.text_area :text, placeholder:"思いつくままに入力", value: @memo_tag.text, class: "memo-text", id: "memo-text" %>
+    <div>
+    <div class="tag-add">
+      <label for="tag-add">タグの追加（1０文字以内）</label>
+      <input type="text" placeholder="タグの追加" id="tag-add">
+      <div id="tag-add-btn" class="btn">追加</div>
+    </div>
+      <div id="tag-area">
+    </div>
+    <%= f.submit "保存", class: "btn" %>
+  <% end %>
+</div>
