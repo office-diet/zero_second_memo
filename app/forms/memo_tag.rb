@@ -9,7 +9,6 @@ class MemoTag
   end
 
   def save
-    binding.pry
     memo = Memo.create(theme: theme, text: text, user_id:  user_id)
     if tags != nil
       tags.each do |t|

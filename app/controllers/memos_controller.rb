@@ -8,7 +8,6 @@ class MemosController < ApplicationController
   end
 
   def create
-    binding.pry
     @memo_tag = MemoTag.new(memo_params)
     if @memo_tag.valid?
       @memo_tag.save
@@ -25,7 +24,7 @@ class MemosController < ApplicationController
 
   private
   def set_memos
-    @memos = Memo.where(user_id: current_user.id)
+    @memos_tags = Memo.includes(:tags).where(user_id: current_user.id).order(id: :desc)
   end
   def memo_params
     params.require("memo_tag").permit(:theme, :text, tags: []).merge(user_id: current_user.id)

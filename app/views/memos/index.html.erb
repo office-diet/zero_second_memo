@@ -1,6 +1,11 @@
 <%= link_to "メモの新規作成", new_memo_path %>
 
-<% @memos.each do |memo| %>
+<% @memos_tags.each do |memo| %>
   <h2><%= memo.theme %></h2>
-  <p><%= memo.text %></p>
+  <p><%= simple_format(memo.text) %></p>
+  <hr>
+  <% memo.tags.each do |tag| %>
+    <span>　<%= tag.name %>　</span>
+  <% end %>
+  <hr>
 <% end %>
