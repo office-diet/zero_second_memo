@@ -4,17 +4,22 @@
     <p><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout" %></p>
   </div>
   <div class="side-list">
+    <% if request.path != new_memo_path %>
+      <div>
+        <%= link_to "メモ作成", new_memo_path %>
+      </div>
+    <% end %>
     <% if memos_tags.present? %>
       <% date = nil %>
       <% memos_tags.each do |memo_tag| %>
         <% if date == nil %>
           <% date = memo_tag.created_at.to_date %>
-          <div class="date"><%= link_to date, memo_path(date) %></div>
+          <div class="date"><%= link_to date, memo_path(date, date: date) %></div>
           <div class="date-list"><ul>
         <% elsif date != memo_tag.created_at.to_date %>
           </ul></div>
           <% date = memo_tag.created_at.to_date %>
-          <div class="date"><%= link_to date, memo_path(date) %></div>
+          <div class="date"><%= link_to date, memo_path(date, date: date) %></div>
           <div class="date-list"><ul>
         <% end %>
         <li><%= memo_tag.theme %></li>

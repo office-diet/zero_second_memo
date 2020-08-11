@@ -19,7 +19,13 @@ class MemosController < ApplicationController
   end
 
   def show
-    @date = params[:id].to_date
+    if params[:date].present?
+      @date = params[:id].to_date
+    else
+      binding.pry
+      @memo_id = params[:id]
+      @date = Memo.find(params[:id]).created_at.to_date
+    end
   end
 
   private
