@@ -14,10 +14,13 @@ a {
 
 .memo {
   min-width: 540px;
+  height: 100vh;
 }
 
 .form {
   padding:20px;
+  height: calc(100% - 65px);
+  overflow: scroll;
 }
 
 .form-head {
