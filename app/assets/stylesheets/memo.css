@@ -2,7 +2,31 @@
   box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+}
 
+.memo-body {
+  display: flex;
+  justify-content: center;
+  width:100vw;
+}
+
+.memo {
+  min-width: 540px;
+}
+
+.form {
+  padding:20px;
+}
+
+.form-head {
+  height: 65px;
+  background: #ddd;
+  padding:10px;
+  font-size: 36px;
+  line-height: 50px;
+}
 #timer {
   width: 500px;
   height: 30px;
@@ -26,14 +50,11 @@
   position: absolute;
   padding-left: 10px;
 }
-.form {
-  margin: 20px;
-  line-height: 30px;
-}
 
 .memo-theme {
   width: 400px;
   padding: 0 5px;
+  margin-bottom: 10px;
 }
 .memo-text {
   width: 500px;
@@ -46,9 +67,13 @@
   margin: 10px 0;
 }
 
+#tag-add {
+  padding: 0 5px;
+}
+
 .btn {
   text-align: center;
-  width: 100px;
+  width: 90px;
   background: skyblue;
   color: darkblue;
   cursor: pointer;
@@ -70,12 +95,14 @@
 
 #tag-area {
   width: 500px;
-  height: 100px;
+  height: 90px;
   background: #eee;
-  padding: 10px 10px 10px 5px;
+  padding: 5px;
   display: flex;
   flex-wrap: wrap;
   border-radius: 4px;
+  margin-bottom: 10px;
+  content: "タグは５つまで登録できます。";
 }
 
 .tag {
@@ -84,8 +111,8 @@
   text-align: center;
   background: skyblue;
   border-radius: 4px;
-  padding: 0 5px ;
-  margin-left: 5px;
+  padding: 5px ;
+  margin: 5px;
   height: fit-content;
   cursor: pointer;
   user-select: none;

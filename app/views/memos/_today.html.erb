@@ -1,0 +1,17 @@
+<div class="today">
+  <div class="form-head">
+  </div>
+  <% @memos_tags.each do |memo| %>
+    <% if memo.created_at.to_date == date %>
+      <div class="today-theme"><%= memo.theme %></h2></div>
+      <div class="today-memo"><%= simple_format(memo.text) %></div>
+      <hr>
+      <div class="today-tags">
+        <% memo.tags.each do |tag| %>
+          <div class="today-tag"><%= tag.name %></div>
+        <% end %>
+      </div>
+      <hr>
+    <% end %>
+  <% end %>
+</div>

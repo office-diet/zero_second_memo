@@ -1,4 +1,4 @@
-window.addEventListener("load", function(){
+window.addEventListener("turbolinks:load", function(){
 
   // テーマ入力時のsubmitを回避
   const memoTheme = document.getElementById("memo-theme");
@@ -16,6 +16,10 @@ window.addEventListener("load", function(){
       alert("タグは１０文字以内です！");
       return false;
     }
+    if ( tagArea.childElementCount >= 5 ){
+      alert("タグの登録は５つまでです！")
+      return false;
+    }
     let div
     if ( tagInput.value != "" ) {
       div = document.createElement("div");
@@ -26,6 +30,18 @@ window.addEventListener("load", function(){
       div.addEventListener('click', function() {
         div.remove();
       });
+    }
+
+  });
+
+  // submit前確認
+  const submit = document.getElementById("submit");
+  submit.addEventListener("click", function(e){
+    console.log(memoTheme.value);
+    console.log(memoText.value);
+    if ( memoText.value == "" || memoTheme.value == "" ) {
+      e.preventDefault();
+      alert("テーマ・メモが空欄たのめ、保存できません。");
     }
   });
 

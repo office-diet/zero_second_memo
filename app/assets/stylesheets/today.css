@@ -1,0 +1,33 @@
+.today {
+  height: 100vh;
+  min-width: 500px;
+  overflow: scroll;
+  background: #f5f5f5;;
+}
+
+.today-theme {
+  font-weight: bold;
+  padding: 5px 10px;
+}
+
+.today-memo {
+  background: white;
+  border-radius: 4px;
+  margin: 5px;
+  padding: 5px;
+}
+
+.today-tags {
+  display: flex;
+}
+
+.today-tag {
+  padding: 5px;
+  background: lightblue;
+  margin: 0 2px;
+  border-radius: 4px;
+}
+
+.today-tag:not(:first-child) {
+  margin-left: 5px;
+}

@@ -1,0 +1,23 @@
+<div class="side">
+  <div class="side-head">
+    <p>ユーザ：<%= current_user.nickname %></p>
+    <p><%= link_to "ログアウト", destroy_user_session_path, class: "logout" %></p>
+  </div>
+  <div class="side-list">
+    <% date = nil %>
+    <% memos_tags.each do |memo_tag| %>
+      <% if date == nil %>
+        <% date = memo_tag.created_at.to_date %>
+        <div class="date"><%= link_to date, memo_path(date) %></div>
+        <div class="date-list"><ul>
+      <% elsif date != memo_tag.created_at.to_date %>
+        </ul></div>
+        <% date = memo_tag.created_at.to_date %>
+        <div class="date"><%= link_to date, memo_path(date) %></div>
+        <div class="date-list"><ul>
+      <% end %>
+      <li><%= memo_tag.theme %></li>
+    <% end %>
+    </ul></div>
+  </div>
+</div>

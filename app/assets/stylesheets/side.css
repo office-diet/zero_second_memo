@@ -1,0 +1,36 @@
+.side {
+  min-width: 200px;
+  height: 100vh;
+  background: #f5f5f5;
+  overflow: scroll;
+}
+
+.side-head {
+  height: 65px;
+  background: #ddd;
+  padding:10px;
+}
+
+.side-list {
+  width: 100%;
+  padding: 10px;
+}
+ul {
+  position: absolute;
+  background: rgba(220,220,255, 0.9);
+  width: 100%;
+  z-index: 10;
+  border-radius: 4px;
+  padding: 5px;
+}
+
+.date-list {
+  display: none;
+  position: relative;
+  transition: all 0.4s;
+}
+
+.date:hover+.date-list {
+  display: block;
+
+}
