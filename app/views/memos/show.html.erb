@@ -1,7 +1,7 @@
 <div class="memo-body">
   <%= render partial: "memos/side", locals: { memos_tags: @memos_tags } %>
-  <div class="form">
-    <%= @date %>
+  <div class="memo">
+      <%= @date %>
   </div>
   <%= render partial: "memos/today", locals: { memos_tags: @memos_tags, date: @date } %>
 </div>

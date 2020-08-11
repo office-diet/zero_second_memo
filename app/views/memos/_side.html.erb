@@ -1,7 +1,7 @@
 <div class="side">
   <div class="side-head">
     <p>ユーザ：<%= current_user.nickname %></p>
-    <p><%= link_to "ログアウト", destroy_user_session_path, class: "logout" %></p>
+    <p><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "logout" %></p>
   </div>
   <div class="side-list">
     <% date = nil %>
