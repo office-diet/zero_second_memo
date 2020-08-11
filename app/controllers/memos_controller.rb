@@ -1,5 +1,5 @@
 class MemosController < ApplicationController
-  before_action :set_memos, only: [:index, :new, :show]
+  before_action :set_memos, only: [:index, :new, :show, :tag]
   def index
   end
   def new
@@ -22,10 +22,14 @@ class MemosController < ApplicationController
     if params[:date].present?
       @date = params[:id].to_date
     else
-      binding.pry
       @memo_id = params[:id]
       @date = Memo.find(params[:id]).created_at.to_date
     end
+  end
+
+  def tag
+    memo_ids = MemosTag.where(tag_id: params[:id]).select(:memo_id)
+    @memos_tags_tag = Memo.includes(:tags).where(id: memo_ids).order(id: "desc")
   end
 
   private

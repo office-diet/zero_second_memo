@@ -1,7 +1,7 @@
 <div class="today">
   <div class="form-head">
   </div>
-  <% @memos_tags.where(created_at: date.in_time_zone.all_day).each do |memo| %>
+  <% memos_tags.each do |memo| %>
     <div class="today-theme"><%= link_to memo.theme, memo_path(memo.id) %></h2></div>
     <div class="today-memo"><%= simple_format(memo.text) %></div>
     <hr>

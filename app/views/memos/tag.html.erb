@@ -1,0 +1,9 @@
+<div class="memo-body">
+  <%= render partial: "memos/side", locals: { memos_tags: @memos_tags } %>
+  <div class="memo">
+    <% @memos_tags_tag.each do |memo| %>
+      <%= memo.theme %>
+    <% end %>
+  </div>
+  <%= render partial: "memos/tag", locals: { memos_tags: @memos_tags_tag } %>
+</div>
