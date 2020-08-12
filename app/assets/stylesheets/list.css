@@ -1,33 +1,37 @@
-.today {
+.list {
   height: 100vh;
   min-width: 500px;
-  overflow: scroll;
   background: #f5f5f5;;
+  overflow: hidden;
 }
 
-.today-theme {
+.contents {
+  height: calc(100% - 65px);
+  overflow: scroll;
+}
+
+.list-theme {
   font-weight: bold;
   padding: 5px 10px;
 }
 
-.today-memo {
+.list-memo {
   background: white;
   border-radius: 4px;
   margin: 5px;
   padding: 5px;
 }
 
-.today-tags {
+.list-tags {
   display: flex;
+  flex-wrap: wrap;
+  padding: 0 3px;
 }
 
-.today-tag {
+.list-tag {
   padding: 5px;
   background: lightblue;
-  margin: 0 2px;
+  margin: 2px;
   border-radius: 4px;
-}
-
-.today-tag:not(:first-child) {
-  margin-left: 5px;
+  font-size: 0.8em;
 }

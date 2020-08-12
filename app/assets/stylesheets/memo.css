@@ -4,6 +4,7 @@
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 .memo-body {
@@ -41,6 +42,7 @@ a {
   overflow: hidden;
   cursor: pointer;
   user-select: none;
+  margin-bottom: 10px;
 }
 #meter {
   position: absolute;
@@ -55,7 +57,7 @@ a {
 }
 
 .memo-theme {
-  width: 400px;
+  width: 500px;
   padding: 0 5px;
   margin-bottom: 10px;
 }
@@ -67,6 +69,7 @@ a {
 
 .tag-add {
   display: flex;
+  justify-content: space-between;
   margin: 10px 0;
 }
 
@@ -106,6 +109,15 @@ a {
   border-radius: 4px;
   margin-bottom: 10px;
   content: "タグは５つまで登録できます。";
+  position: relative;
+}
+
+.tag-caution {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  color: #777;
+  font-size: 0.8em;
 }
 
 .tag {
@@ -119,4 +131,5 @@ a {
   height: fit-content;
   cursor: pointer;
   user-select: none;
+  z-index: 10;
 }

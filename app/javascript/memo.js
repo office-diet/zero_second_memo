@@ -16,7 +16,7 @@ window.addEventListener("turbolinks:load", function(){
       alert("タグは１０文字以内です！");
       return false;
     }
-    if ( tagArea.childElementCount >= 5 ){
+    if ( tagArea.childElementCount >= 6 ){
       alert("タグの登録は５つまでです！")
       return false;
     }

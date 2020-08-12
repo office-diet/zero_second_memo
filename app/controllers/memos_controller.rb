@@ -1,8 +1,7 @@
 class MemosController < ApplicationController
   before_action :set_memos, only: [:index, :new, :show, :tag]
-  def index
-  end
-  
+  before_action :set_all_tags, only: [:index, :new, :show, :tag]
+    
   def new
     @new_memo = MemoTag.new
     @date = Date.today.to_date
@@ -11,7 +10,7 @@ class MemosController < ApplicationController
 
   def create
     @memo_tag = MemoTag.new(memo_params)
-      if @memo_tag.valid?
+    if @memo_tag.valid?
       @memo_tag.save
       redirect_to new_memo_path and return
     else
@@ -24,7 +23,11 @@ class MemosController < ApplicationController
     if params[:date].present?
       @date = params[:date].to_date
       @list_memos = @memos.where(created_at: @date.in_time_zone.all_day)
-      @memo = @memos.where(created_at: @date.in_time_zone.all_day).first
+      if params[:id] != "0"
+        @memo = @memos.find(params[:id])
+      else
+        @memo = @memos.where(created_at: @date.in_time_zone.all_day).first
+      end
     else
       @memo = @memos.find(params[:id])
       @date = @memo.created_at.to_date
@@ -36,8 +39,12 @@ class MemosController < ApplicationController
       @tag_id = params[:tag]
       memo_ids = MemosTag.where(tag_id: @tag_id).select(:memo_id)
       @list_memos = Memo.includes(:tags).where(id: memo_ids).order(id: "desc")
-      @memo = @list_memos.find(params[:id])
       @tag = Tag.find(params[:tag]).name
+      if params[:id] != "0"
+        @memo = @list_memos.find(params[:id])
+      else
+        @memo = @list_memos.first
+      end
   end
 
   private
@@ -46,6 +53,12 @@ class MemosController < ApplicationController
     @side_memos = @memos.select(:created_at, :theme)
   end
   
+  def set_all_tags
+    memo_ids = Memo.where(user_id: current_user.id).select(:id)
+    tag_ids = MemosTag.where(memo_id: memo_ids)
+    @tags = Tag.where(id: tag_ids)
+  end
+
   def memo_params
     params.require("memo_tag").permit(:theme, :text, tags: []).merge(user_id: current_user.id)
   end 

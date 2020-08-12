@@ -2,7 +2,6 @@
   min-width: 200px;
   height: 100vh;
   background: #f5f5f5;
-  overflow: scroll;
 }
 
 .side-head {
@@ -14,6 +13,8 @@
 .side-list {
   width: 100%;
   padding: 10px;
+  height: calc(70% - 95px);
+  overflow: scroll;
 }
 ul {
   position: absolute;
@@ -32,5 +33,22 @@ ul {
 
 .date:hover+.date-list {
   display: block;
-
 }
+
+.side-tags-head {
+  width: 100%;
+  background: #ddd;
+  padding: 0 10px;
+  height: 30px;
+  line-height: 30px;
+}
+
+.side-tags {
+  display: flex;
+  flex-wrap: wrap;
+  width: 200px;
+  height: 30%;
+  padding: 3px;
+  overflow: scroll;
+}
+

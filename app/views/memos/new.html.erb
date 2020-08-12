@@ -1,5 +1,5 @@
 <div class="memo-body">
-  <%= render partial: "memos/side", locals: { side_memos: @side_memos } %>
+  <%= render partial: "memos/side", locals: { side_memos: @side_memos, tags: @tags } %>
   <div class="memo">
     <div class="form-head">
       <%= "#{@date}のゼロ秒メモ" %>
@@ -28,6 +28,9 @@
           <div id="tag-add-btn" class="btn">追加</div>
         </div>
         <div id="tag-area">
+          <div class="tag-caution">
+            タグは５個まで登録できます
+          </div>
         </div>
         <%= f.submit "保存", class: "btn", id: "submit" %>
       <% end %>

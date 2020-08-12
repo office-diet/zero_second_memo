@@ -1,5 +1,5 @@
 <div class="memo-body">
-  <%= render partial: "memos/side", locals: { side_memos: @side_memos } %>
+  <%= render partial: "memos/side", locals: { side_memos: @side_memos, tags: @tags } %>
   <div class="memo">
     <div class="form-head">
       <%= "#{@tag}のゼロ秒メモ" %>
