@@ -28,7 +28,24 @@ window.addEventListener("turbolinks:load", function(){
       tagArea.appendChild(div);
       tagInput.value = "";
       div.addEventListener('click', function() {
-        div.remove();
+        div.animate({
+          opacity: 0
+          }, 202
+        );
+        setTimeout(function(){
+          div.style.opacity = 0;
+          }, 200
+        );
+        setTimeout(function(){
+          div.animate({
+            width: 0
+            }, 201);
+          }, 200
+        );
+        setTimeout(function(){
+          div.remove();
+          }, 400
+        );
       });
     }
 

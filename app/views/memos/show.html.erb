@@ -5,17 +5,9 @@
     <div class="form-head">
       <%= "#{@date}のゼロ秒メモ" %>
     </div>
-    <div class="show">  
-      <%= @memo.theme %>
-      <%= simple_format(@memo.text) %>
-      <hr>
-      <div class="list-tags">
-        <% @memo.tags.each do |tag| %>
-          <div class="list-tag"><%=link_to tag.name, tag_memo_path(@memo.id, tag: tag.id) %></div>
-        <% end %>
-      </div>
-      <hr>
-    </div>
+
+    <%= render partial: "memos/memo", locals: { memo: @memo } %>
+
   </div>
   
   <%= render partial: "memos/list", locals: { list_memos: @list_memos, date: @date } %>

@@ -19,6 +19,14 @@ a {
   height: 100vh;
 }
 
+.show {
+  min-width: 540px;
+  padding: 20px;
+  height: calc(100% - 65px);
+  overflow: scroll;
+
+}
+
 .form {
   padding:20px;
   height: calc(100% - 65px);
@@ -85,7 +93,7 @@ a {
   color: darkblue;
   cursor: pointer;
   user-select: none;
-  box-shadow: 0 3px blue;
+  box-shadow: 0 3px rgb(0, 145, 212);
   border-radius: 4px;
   border: none;
   transition: all 0.1s;
@@ -109,7 +117,6 @@ a {
   flex-wrap: wrap;
   border-radius: 4px;
   margin-bottom: 10px;
-  content: "タグは５つまで登録できます。";
   position: relative;
 }
 
@@ -125,7 +132,7 @@ a {
   font-size: 0.8em;
   color: darkblue;
   text-align: center;
-  background: skyblue;
+  background: lightblue;
   border-radius: 4px;
   padding: 5px ;
   margin: 5px;
@@ -133,4 +140,18 @@ a {
   cursor: pointer;
   user-select: none;
   z-index: 10;
+}
+
+
+.theme-text {
+  font-size: 24px;
+  background: #f5f5f5;
+  border-radius: 4px;
+  margin: 10px 0;
+}
+
+.show .memo-text {
+  background: #f5f5f5;
+  border-radius: 4px;
+  margin: 10px 0;
 }

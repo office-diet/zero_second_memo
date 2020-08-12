@@ -1,19 +1,14 @@
 <div class="memo-body">
   <%= render partial: "memos/side", locals: { side_memos: @side_memos, tags: @tags } %>
+
   <div class="memo">
     <div class="form-head">
       <%= "#{@tag}のゼロ秒メモ" %>
     </div>
-
-      <%= @memo.theme %>
-      <%= simple_format(@memo.text) %>
-      <hr>
-      <div class="list-tags">
-        <% @memo.tags.each do |tag| %>
-          <div class="list-tag"><%=link_to tag.name, tag_memo_path(@memo.id, tag: tag.id) %></div>
-        <% end %>
-      </div>
-      <hr>
+  
+    <%= render partial: "memos/memo", locals: { memo: @memo } %>
+  
   </div>
+
   <%= render partial: "memos/list_tag", locals: { list_memos: @list_memos, date: @date } %>
 </div>

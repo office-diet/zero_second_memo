@@ -1,0 +1,15 @@
+<div class="show">
+    メモのテーマ：
+  <div class="theme-text">
+    <%= memo.theme %>
+  </div>
+  メモの詳細
+  <div class="memo-text">
+    <%= simple_format(memo.text) %>
+  </div>
+  <div id="tag-area">
+    <% memo.tags.each do |tag| %>
+      <div class="tag"><%=link_to tag.name, tag_memo_path(memo.id, tag: tag.id) %></div>
+    <% end %>
+  </div>
+</div>

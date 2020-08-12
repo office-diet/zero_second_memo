@@ -30,6 +30,8 @@
 
 .list-tag {
   padding: 5px;
+  color: darkblue;
+  text-align: center;
   background: lightblue;
   margin: 2px;
   border-radius: 4px;
