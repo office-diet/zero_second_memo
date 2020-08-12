@@ -1,0 +1,16 @@
+<div class="today">
+  <div class="form-head">
+  </div>
+  <% list_memos.each do |memo| %>
+    <div class="today-theme"><%= link_to memo.theme, tag_memo_path(memo.id, tag: @tag_id ) %>
+    （<%= link_to memo.created_at.to_date, memo_path(memo.id, date: memo.created_at.to_date ) %>）</h2></div>
+    <div class="today-memo"><%= simple_format(memo.text) %></div>
+    <hr>
+    <div class="today-tags">
+      <% memo.tags.each do |tag| %>
+        <div class="today-tag"><%=link_to tag.name, tag_memo_path(memo.id, tag: tag.id) %></div>
+      <% end %>
+    </div>
+    <hr>
+  <% end %>
+</div>

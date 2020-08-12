@@ -1,18 +1,13 @@
 <div class="memo-body">
-  <%= render partial: "memos/side", locals: { memos_tags: @memos_tags } %>
+  <%= render partial: "memos/side", locals: { side_memos: @side_memos } %>
   <div class="memo">
     <div class="form-head">
       <%= "#{@date}のゼロ秒メモ" %>
     </div>
-    <% if @memo_id.present? %>
-      <% memo_tag = @memos_tags.find(@memo_id) %>
-    <% elsif @date.present? %>
-      <% memo_tag = @memos_tags.where(created_at: @date.in_time_zone.all_day).first %>
-    <% end %>
 
-      <%= memo_tag.theme %>
-      <%= simple_format(memo_tag.text) %>
+      <%= @memo.theme %>
+      <%= simple_format(@memo.text) %>
 
   </div>
-  <%= render partial: "memos/today", locals: { memos_tags: @memos_tags, date: @date } %>
+  <%= render partial: "memos/list", locals: { list_memos: @list_memos, date: @date } %>
 </div>
