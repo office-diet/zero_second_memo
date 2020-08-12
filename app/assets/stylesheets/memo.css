@@ -10,7 +10,8 @@ a {
 .memo-body {
   display: flex;
   justify-content: center;
-  width:100vw;
+  width:1240px;
+  margin: 0 auto;
 }
 
 .memo {
@@ -28,7 +29,7 @@ a {
   height: 65px;
   background: #ddd;
   padding:10px;
-  font-size: 36px;
+  font-size: 24px;
   line-height: 50px;
 }
 #timer {

@@ -14,7 +14,8 @@ class MemoTag
       tags.each do |t|
         tag = Tag.where(name: t).first_or_initialize
         tag.save
-        MemosTag.create(memo_id: memo.id, tag_id: tag.id)
+        memo_tag = MemosTag.where(memo_id: memo.id, tag_id: tag.id).first_or_initialize
+        memo_tag.save
       end
     end
   end
