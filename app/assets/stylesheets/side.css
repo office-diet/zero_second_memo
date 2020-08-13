@@ -53,12 +53,14 @@ ul {
   line-height: 30px;
 }
 
+.side-tags-area {
+  width: 200px;
+  padding: 3px;
+  height: 30%;
+  overflow: scroll;
+}
+
 .side-tags {
   display: flex;
   flex-wrap: wrap;
-  width: 200px;
-  height: 30%;
-  padding: 3px;
-  overflow: scroll;
-  align-items: flex-start;
 }

@@ -38,7 +38,7 @@ class MemosController < ApplicationController
   def tag
       @tag_id = params[:tag]
       memo_ids = MemosTag.where(tag_id: @tag_id).select(:memo_id)
-      @list_memos = Memo.includes(:tags).where(id: memo_ids).order(id: "desc")
+      @list_memos = Memo.includes(:tags).where(id: memo_ids).where(user_id: current_user.id).order(id: "desc")
       @tag = Tag.find(params[:tag]).name
       if params[:id] != "0"
         @memo = @list_memos.find(params[:id])

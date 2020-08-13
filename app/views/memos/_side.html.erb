@@ -38,9 +38,11 @@
   </div>
 
   <div class="side-tags-head">タグ</div>
-  <div class="side-tags">
-    <% tags.each do |tag| %>
-      <div class="list-tag"><%=link_to tag.name, tag_memo_path(0, tag: tag.id) %></div>
-    <% end %>
+  <div class="side-tags-area">
+    <div class="side-tags">
+      <% tags.each do |tag| %>
+        <div class="list-tag"><%=link_to tag.name, tag_memo_path(0, tag: tag.id) %></div>
+      <% end %>
+    </div>
   </div>
 </div>
