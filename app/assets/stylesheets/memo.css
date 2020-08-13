@@ -154,4 +154,5 @@ a {
   background: #f5f5f5;
   border-radius: 4px;
   margin: 10px 0;
+  overflow: scroll;
 }

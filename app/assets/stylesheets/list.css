@@ -20,6 +20,8 @@
   border-radius: 4px;
   margin: 5px;
   padding: 5px;
+  max-height: 300px;
+  overflow: scroll;
 }
 
 .list-tags {
