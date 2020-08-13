@@ -6,8 +6,8 @@ class MemosController < ApplicationController
     @new_memo = MemoTag.new
     @date = Date.today.to_date
     @list_memos = @memos.where(created_at: @date.in_time_zone.all_day)
-    binding.pry
-    ContactMailer.send_when_admin_reply(current_user, Memo.where(user_id: current_user.id)).deliver
+    # binding.pry
+    # ContactMailer.send_when_admin_reply(current_user, Memo.where(user_id: current_user.id)).deliver
   end
 
   def create
