@@ -10,23 +10,31 @@
         <%= link_to "メモ作成", new_memo_path %>
       </div>
     <% end %>
+    
     <% if side_memos.present? %>
       <% date = nil %>
       <% side_memos.each do |memo| %>
         <% if date == nil %>
+
           <% date = memo.created_at.to_date %>
           <div class="date"><%= link_to date, memo_path(0, date: date) %></div>
           <div class="date-list"><ul>
+
         <% elsif date != memo.created_at.to_date %>
+          
           </ul></div>
           <% date = memo.created_at.to_date %>
           <div class="date"><%= link_to date, memo_path(0, date: date) %></div>
           <div class="date-list"><ul>
+        
         <% end %>
+        
         <li><%= memo.theme %></li>
+      
       <% end %>
       </ul></div>
     <% end %>
+  
   </div>
 
   <div class="side-tags-head">タグ</div>

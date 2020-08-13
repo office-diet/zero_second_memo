@@ -25,16 +25,24 @@ ul {
   padding: 5px;
 }
 
-.date-list {
-  display: none;
-  position: relative;
-  transition: all 0.4s;
+.date-list {  
+  display:none;
+  overflow: hidden;
+  transition: 0.8s;  
 }
 
+.date-list ul {
+  width: auto;
+  word-wrap: normal;
+}
+
+
 .date:hover+.date-list {
-  display: block;
-  overflow: visible;
-  z-index: 10;
+  display:block;
+  height: auto;
+  padding: 5px;
+  background: #fff5eb;
+  opacity: 1;
 }
 
 .side-tags-head {
@@ -53,4 +61,3 @@ ul {
   padding: 3px;
   overflow: scroll;
 }
-
