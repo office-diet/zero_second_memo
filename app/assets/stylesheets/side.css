@@ -60,4 +60,5 @@ ul {
   height: 30%;
   padding: 3px;
   overflow: scroll;
+  align-items: flex-start;
 }

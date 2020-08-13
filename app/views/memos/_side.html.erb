@@ -5,7 +5,7 @@
   </div>
 
   <div class="side-list">
-    <% if request.path != new_memo_path %>
+    <% if request.path != new_memo_path && request.path != root_path %>
       <div>
         <%= link_to "メモ作成", new_memo_path %>
       </div>

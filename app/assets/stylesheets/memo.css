@@ -136,7 +136,7 @@ a {
   border-radius: 4px;
   padding: 5px ;
   margin: 5px;
-  height: fit-content;
+  height: min-content;
   cursor: pointer;
   user-select: none;
   z-index: 10;

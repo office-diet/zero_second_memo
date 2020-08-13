@@ -55,7 +55,7 @@ class MemosController < ApplicationController
   
   def set_all_tags
     memo_ids = Memo.where(user_id: current_user.id).select(:id)
-    tag_ids = MemosTag.where(memo_id: memo_ids)
+    tag_ids = MemosTag.where(memo_id: memo_ids).select(:tag_id)
     @tags = Tag.where(id: tag_ids).order(id: :desc)
   end
 
