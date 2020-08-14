@@ -1,0 +1,43 @@
+<%= @user.nickname %> 様<br>
+
+<hr>
+<h2>昨日のメモ</h2>
+<hr>
+<% if @yesterday_memo.present? %>
+  <% @yesterday_memo.each do |memo| %>
+    <h3><%= memo.theme %></h3>
+    <p><%= simple_format( memo.text ) %></p>
+    <hr>
+  <% end %>
+<% else %>
+  <p>昨日のメモはありませんでした。</p>
+  <hr>
+<% end %>
+
+<hr>
+<h2>二日前のメモ</h2>
+<hr>
+<% if @two_days_ago_memo.present? %>
+  <% @two_days_ago_memo.each do |memo| %>
+    <h3><%= memo.theme %></h3>
+    <p><%= simple_format( memo.text ) %></p>
+    <hr>
+  <% end %>
+<% else %>
+  <p>二日前のメモはありませんでした。</p>
+  <hr>
+<% end %>
+
+<hr>
+<h2>三日前のメモ</h2>
+<hr>
+<% if @three_days_ago_memo.present? %>
+  <% @three_days_ago_memo.each do |memo| %>
+    <h3><%= memo.theme %></h3>
+    <p><%= simple_format( memo.text ) %></p>
+    <hr>
+  <% end %>
+<% else %>
+  <p>三日前のメモはありませんでした。</p>
+  <hr>
+<% end %>

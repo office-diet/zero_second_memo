@@ -1,7 +1,9 @@
 class ContactMailer < ApplicationMailer
-  def send_when_admin_reply(user, memos) #メソッドに対して引数を設定
-    @user = user #ユーザー情報
-    @memo = memos.last #返信内容
-    mail to: @user.email, subject: '【サイト名】 お問い合わせありがとうございます'
+  def send_everyday_mail(user, yesterday_memo, two_days_ago_memo, three_days_ago_memo) 
+    @user = user
+    @yesterday_memo = yesterday_memo
+    @two_days_ago_memo = two_days_ago_memo
+    @three_days_ago_memo = three_days_ago_memo
+    mail to: @user.email, subject: '0秒メモアプリ配信'
   end
 end
