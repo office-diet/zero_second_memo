@@ -7,6 +7,10 @@ a {
   color: inherit;
 }
 
+body {
+  background: rgba(250,250,250,1);
+}
+
 .memo-body {
   display: flex;
   justify-content: center;
@@ -126,6 +130,7 @@ a {
   bottom: 10px;
   color: #777;
   font-size: 0.8em;
+  user-select: none;
 }
 
 .tag {
