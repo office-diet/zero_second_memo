@@ -7,5 +7,5 @@ Rails.application.routes.draw do
       get :tag
     end
   end
-  resources :users, only: [:edit, :update]
+  resources :users, only: [:edit, :update, :password]
 end

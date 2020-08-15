@@ -7,7 +7,7 @@
       <%= link_to "メモ作成ページへ戻る", root_path %>
     </div>
     <div class='account-page__inner--right user-form'>
-      <%= form_with model: current_user, url: "/users/#{current_user.id}", local: true do |f|%>
+      <%= form_with model: current_user, url: user_path( current_user.id ), method: :patch, local: true do |f|%>
         <div class='field'>
           <div class='field-label'>
             <%= f.label :nickname %>
@@ -22,6 +22,14 @@
           </div>
           <div class='field-input'>
             <%= f.email_field :email%>
+          </div>
+        </div>
+        <div class='field'>
+          <div class='field-label'>
+            <%= f.label :password %>
+          </div>
+          <div class='field-input'>
+            <%= f.password_field :password %>
           </div>
         </div>
         <div class='actions'>
