@@ -122,6 +122,8 @@ Rails.application.configure do
   #   enable_starttls_auto: true
   # }
 
+  #　参考サイト
+  # https://qiita.com/rainbow___0/items/70d0be0ab858dfb84975
   config.action_mailer.perform_caching = false
 
   config.action_mailer.default_url_options = { :host => 'zero-second-meno.herokuapp.com' }
