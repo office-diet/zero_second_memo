@@ -126,7 +126,7 @@ Rails.application.configure do
   # https://qiita.com/rainbow___0/items/70d0be0ab858dfb84975
   config.action_mailer.perform_caching = false
 
-  config.action_mailer.default_url_options = { :host => 'zero-second-meno.herokuapp.com' }
+  config.action_mailer.default_url_options = { :host => 'zero-second-memo.herokuapp.com' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     :user_name      => ENV['SENDGRID_USERNAME'],
