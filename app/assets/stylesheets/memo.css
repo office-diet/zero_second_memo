@@ -27,7 +27,8 @@ body {
   min-width: 540px;
   padding: 20px;
   height: calc(100% - 65px);
-  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: scroll;
 
 }
 
@@ -159,5 +160,5 @@ body {
   background: #f5f5f5;
   border-radius: 4px;
   margin: 10px 0;
-  overflow: scroll;
-}
+  overflow-x: hidden;
+  overflow-y: scroll;

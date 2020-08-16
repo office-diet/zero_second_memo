@@ -14,7 +14,8 @@
   width: 100%;
   padding: 10px;
   height: calc(70% - 95px);
-  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 ul {
   position: absolute;
@@ -27,7 +28,6 @@ ul {
 
 .date-list {  
   display:none;
-  overflow: hidden;
   transition: 0.8s;  
 }
 
@@ -57,7 +57,8 @@ ul {
   width: 200px;
   padding: 3px;
   height: 30%;
-  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: scroll;
 }
 
 .side-tags {
