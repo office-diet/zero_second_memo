@@ -55,8 +55,9 @@ class MemosController < ApplicationController
   
   def set_all_tags
     memo_ids = Memo.where(user_id: current_user.id).select(:id)
-    tag_ids = MemosTag.where(memo_id: memo_ids).select(:tag_id)
-    @tags = Tag.where(id: tag_ids).order(id: :desc)
+    # tag_ids = MemosTag.where(memo_id: memo_ids).select(:tag_id)
+    # @tags = Tag.where(id: tag_ids).order(id: :desc)
+    @tags = MemosTag.where(memo_id: memo_ids).joins(:tag).group("tags.id", "tags.name").count.sort  {|(k1, v1), (k2, v2)| v2 <=> v1 }.to_h
   end
 
   def memo_params
