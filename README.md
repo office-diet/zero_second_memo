@@ -14,12 +14,11 @@
 https://zero-second-memo.herokuapp.com/memos/new
 
 # 利用方法
-
+** 使用方法説明動画
+https://youtu.be/f81Oo0yPnsw
 1. Basic認証を通過
 2. ユーザ登録（必須）
 3. メモ記入開
-** 使用方法説明動画
-https://youtu.be/f81Oo0yPnsw
 
 # 目指した問題解決
 
