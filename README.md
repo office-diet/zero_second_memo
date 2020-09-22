@@ -1,29 +1,52 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# アプリケーション名
 
-Things you may want to cover:
+ゼロ秒メモアプリ
 
-* Ruby version
+# アプリケーション概要
 
-* System dependencies
+思いついたのこと、思っていることなどをひたすら書き出し、頭を整理するためのアプリ。
+60秒カウントダウンと、タイムバーの減少を目安に行う。
+記入したメモは、翌日、90日後、180日後にメールにて配信される。
 
-* Configuration
+# URL
+https://zero-second-memo.herokuapp.com/memos/new
 
-* Database creation
+# 利用方法
 
-* Database initialization
+1. Basic認証を通過
+2. ユーザ登録（必須）
+3. メモ記入開始
 
-* How to run the test suite
+# 目指した問題解決
 
-* Services (job queues, cache servers, search engines, etc.)
+ゼロ秒メモの習慣は、毎日10枚のメモ書きを行う。
+「紙が増え続ける」「検索性が低い」という問題を解決するためにアプリを開発。
 
-* Deployment instructions
+# 洗い出した要件
 
-* ...
+## ユーザ管理機能	
+・ユーザ登録ができる
+・ユーザ登録が完了していれば、ログインすることができる。
+・ログアウトできる
+## メモ入力機能	
+・テーマを設定できる
+・メモを入力できる
+・制限時間は1分
+・メモを複数枚入力することができる
+・メモにタグを付加することができる
 
+## メモ閲覧機能	
+・メモ一覧を閲覧できる
+・メモは作成日ごとに管理される
+・メモはタグごとに閲覧できる
 
+## メモ検索機能
+・日付検索、タグ検索可能
+
+## メール配信
+・前日、30日前・60日前のメモをメール配信する
 
 # テーブル設計
 
