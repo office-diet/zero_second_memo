@@ -6,8 +6,8 @@ namespace :send_mail do
 
     users = User.all
     yesterday = Date.today - 1
-    two_days_ago = yesterday - 1
-    three_days_ago = two_days_ago -1
+    two_days_ago = yesterday - 90
+    three_days_ago = two_days_ago - 180
 
     users.each do |user|
       yesterday_memo = Memo.where(created_at: yesterday.in_time_zone.all_day).where(user_id: user.id)

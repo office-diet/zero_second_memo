@@ -15,7 +15,7 @@
 <% end %>
 
 <hr>
-<h2>二日前のメモ</h2>
+<h2>90日前のメモ</h2>
 <hr>
 <% if @two_days_ago_memo.present? %>
   <% @two_days_ago_memo.each do |memo| %>
@@ -24,12 +24,12 @@
     <hr>
   <% end %>
 <% else %>
-  <p>二日前のメモはありませんでした。</p>
+  <p>90日前のメモはありませんでした。</p>
   <hr>
 <% end %>
 
 <hr>
-<h2>三日前のメモ</h2>
+<h2>180日前のメモ</h2>
 <hr>
 <% if @three_days_ago_memo.present? %>
   <% @three_days_ago_memo.each do |memo| %>
@@ -38,6 +38,6 @@
     <hr>
   <% end %>
 <% else %>
-  <p>三日前のメモはありませんでした。</p>
+  <p>180日前のメモはありませんでした。</p>
   <hr>
 <% end %>
